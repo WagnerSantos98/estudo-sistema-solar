@@ -15,9 +15,9 @@ const StyledCard = styled(Card)(({ planetcolor }) => ({
   position: 'fixed',
   right: 32,
   bottom: 32,
-  width: '90%',
-  maxWidth: 1400,
-  padding: 48,
+  width: '70%',
+  maxWidth: 1000,
+  padding: 32,
   background: 'rgba(10, 10, 46, 0.85)',
   backdropFilter: 'blur(12px)',
   color: '#fff',
@@ -27,7 +27,7 @@ const StyledCard = styled(Card)(({ planetcolor }) => ({
   animation: 'slideIn 0.3s ease-out',
   display: 'flex',
   flexDirection: 'column',
-  gap: '40px',
+  gap: '24px',
   '@keyframes slideIn': {
     from: {
       transform: 'translateY(100%)',
@@ -53,22 +53,22 @@ const Title = styled(Typography)(({ planetcolor }) => ({
 
 const MainContent = styled(Box)({
   display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gap: '32px',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  gap: '24px',
   alignContent: 'start',
-  padding: '0 12px',
+  padding: '0 8px',
 });
 
 const InfoSection = styled(Box)(({ planetcolor }) => ({
-  padding: 36,
-  borderRadius: 24,
+  padding: 24,
+  borderRadius: 16,
   background: 'rgba(255, 255, 255, 0.03)',
   border: '1px solid rgba(255, 255, 255, 0.1)',
   transition: 'all 0.3s ease',
   height: 'fit-content',
   position: 'relative',
   overflow: 'hidden',
-  minHeight: '220px',
+  minHeight: '180px',
   display: 'flex',
   flexDirection: 'column',
   '&:before': {
@@ -101,31 +101,74 @@ const InfoSection = styled(Box)(({ planetcolor }) => ({
 }));
 
 const InfoLabel = styled(Typography)({
-  fontSize: '1.3rem',
+  fontSize: '1.1rem',
   color: 'rgba(255, 255, 255, 0.9)',
-  marginBottom: 24,
+  marginBottom: 16,
   textTransform: 'uppercase',
-  letterSpacing: '2px',
+  letterSpacing: '1.5px',
   display: 'flex',
   alignItems: 'center',
-  gap: '16px',
+  gap: '12px',
   position: 'relative',
-  paddingBottom: '16px',
+  paddingBottom: '12px',
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
   '& .MuiSvgIcon-root': {
-    fontSize: '1.8rem',
+    fontSize: '1.4rem',
     color: 'inherit',
   },
 });
 
+const DataItem = styled(Box)(({ planetcolor }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+  marginBottom: '16px',
+  position: 'relative',
+  paddingLeft: '12px',
+  '&:before': {
+    content: '""',
+    position: 'absolute',
+    left: 0,
+    width: '3px',
+    height: 'calc(100% - 4px)',
+    background: planetcolor,
+    borderRadius: '4px',
+    opacity: 0.7,
+    top: '2px',
+  },
+  '&:after': {
+    content: '""',
+    position: 'absolute',
+    left: '12px',
+    right: '-12px',
+    bottom: '-8px',
+    height: '1px',
+    background: 'rgba(255, 255, 255, 0.06)',
+  },
+  '&:last-child': {
+    marginBottom: 0,
+    '&:after': {
+      display: 'none',
+    },
+  },
+}));
+
+const DataLabel = styled(Typography)({
+  color: 'rgba(255, 255, 255, 0.75)',
+  fontSize: '0.95rem',
+  minWidth: '140px',
+  fontWeight: '500',
+  letterSpacing: '0.5px',
+});
+
 const InfoValue = styled(Typography)({
   color: 'rgba(255, 255, 255, 0.95)',
-  fontSize: '1.2rem',
+  fontSize: '1rem',
   fontWeight: '500',
   letterSpacing: '0.5px',
   flex: 1,
   textAlign: 'right',
-  paddingLeft: '12px',
+  paddingLeft: '8px',
 });
 
 const InfoGrid = styled(Grid)({
@@ -148,49 +191,6 @@ const CloseButton = styled(IconButton)({
     background: 'rgba(255, 255, 255, 0.15)',
     transform: 'scale(1.1)',
   },
-});
-
-const DataItem = styled(Box)(({ planetcolor }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  gap: '16px',
-  marginBottom: '20px',
-  position: 'relative',
-  paddingLeft: '16px',
-  '&:before': {
-    content: '""',
-    position: 'absolute',
-    left: 0,
-    width: '4px',
-    height: 'calc(100% - 4px)',
-    background: planetcolor,
-    borderRadius: '4px',
-    opacity: 0.7,
-    top: '2px',
-  },
-  '&:after': {
-    content: '""',
-    position: 'absolute',
-    left: '16px',
-    right: '-16px',
-    bottom: '-10px',
-    height: '1px',
-    background: 'rgba(255, 255, 255, 0.06)',
-  },
-  '&:last-child': {
-    marginBottom: 0,
-    '&:after': {
-      display: 'none',
-    },
-  },
-}));
-
-const DataLabel = styled(Typography)({
-  color: 'rgba(255, 255, 255, 0.75)',
-  fontSize: '1.1rem',
-  minWidth: '160px',
-  fontWeight: '500',
-  letterSpacing: '0.5px',
 });
 
 const PlanetInfo = ({ planet, onClose }) => {
