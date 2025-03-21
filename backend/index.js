@@ -15,8 +15,8 @@ app.use(express.json());
 app.use('/api', planetsRoutes);
 
 // Rota de teste
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
+app.get('/', (req, res) => {
+  res.json({ status: 'Hello World' });
 });
 
 
