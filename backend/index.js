@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const planetsRoutes = require('./routes/planetRoutes');
+const planetsRoutes = require('./src/routes/planetRoutes');
 
 dotenv.config();
 
