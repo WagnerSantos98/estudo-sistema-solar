@@ -19,13 +19,12 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Configuração para desenvolvimento local
-if (process.env.NODE_ENV !== 'production') {
+
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
   });
-}
+
 
 // Exportação para a Vercel
 module.exports = app; 
