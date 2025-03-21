@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://estudo-sistema-solar-backend.vercel.app/'
+  baseURL: 'https://estudo-sistema-solar-backend.vercel.app/api'
 });
 
 export const getPlanetInfo = async (planetName) => {
